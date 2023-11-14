@@ -16,4 +16,4 @@
 /code-stages
 /scripts
 
-*.config.js
+# *.config.js
