@@ -1,6 +1,7 @@
 import { FC } from "react";
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { RootLayoutProps } from "@/interface/layout/RootLayoutInterface";
 
 import "../styles/globals.css";
@@ -13,8 +14,17 @@ export const metadata: Metadata = {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body>{children}</body>
+      <html lang="en" suppressHydrationWarning>
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            storageKey="next-discord-theme"
+          >
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );
