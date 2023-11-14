@@ -19,4 +19,5 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     </html>
   );
 };
+
 export default RootLayout;
