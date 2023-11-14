@@ -1,11 +1,10 @@
 import { FC } from "react";
-import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
 
 const HomePage: FC = () => {
   return (
     <div className="container">
-      <h2 className="text-2xl">Home Page</h2>
-      <Button>Click Me</Button>
+      <UserButton afterSignOutUrl="/" />
     </div>
   );
 };
