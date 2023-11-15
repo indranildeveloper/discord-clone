@@ -2,6 +2,7 @@ import { FC } from "react";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initialProfile";
+import InitialModal from "@/components/modals/InitialModal";
 
 const SetupPage: FC = async () => {
   const profile = await initialProfile();
@@ -22,7 +23,7 @@ const SetupPage: FC = async () => {
 
   return (
     <div>
-      <h2>Create a server</h2>
+      <InitialModal />
     </div>
   );
 };
