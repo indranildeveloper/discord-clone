@@ -492,10 +492,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:5.5.2":
-  version: 5.5.2
-  resolution: "@prisma/engines@npm:5.5.2"
-  checksum: 8f813c299980491e9ec20044d33246f850ebc1cb93ada17c833fc7182c70d4626e76c69b7256c79527bfe1c81ec0ba7f9f5d794fddde76d246b01fb815b55edf
+"@prisma/engines@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@prisma/engines@npm:5.6.0"
+  checksum: 587cf254da9628ddfd21a8f519b841c5c7713f2e3208e65cae3ec0ef812a67a001bee4ffe19d8ba71a867419a3f8540b64d7998c63696b951270397732d08886
   languageName: node
   linkType: hard
 
@@ -1382,6 +1382,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@uploadthing/mime-types@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@uploadthing/mime-types@npm:0.2.2"
+  checksum: 807bb04db8b2d9bbc246f12b24ce3f15d4917571f69e9140d2870779ed78bfe559b5f42243e4a5b8b51dceaea071a7e66ea59c7accf269f76ed59a1d1f2e6d7e
+  languageName: node
+  linkType: hard
+
+"@uploadthing/react@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@uploadthing/react@npm:6.0.0"
+  dependencies:
+    "@uploadthing/shared": "npm:^6.0.0"
+    attr-accept: "npm:^2.2.2"
+    file-selector: "npm:^0.6.0"
+    tailwind-merge: "npm:^1.13.2"
+  peerDependencies:
+    next: 14.0.1
+    react: ^17.0.2 || ^18.0.0
+    uploadthing: ^6.0.0
+  peerDependenciesMeta:
+    next:
+      optional: true
+  checksum: b0010653979b33d2411f77192a2ea152e2f947d002780f3966b38f42e08fc10f5ceb23295fc5032764cad0be0702b727441184dd52e44026e07d645ffeda3e14
+  languageName: node
+  linkType: hard
+
+"@uploadthing/shared@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@uploadthing/shared@npm:6.0.0"
+  peerDependencies:
+    "@uploadthing/mime-types": ^0.2.2
+  peerDependenciesMeta:
+    "@uploadthing/mime-types":
+      optional: true
+  checksum: 689139edfb4225f2e02eb6b192e3b5c57912bc2bf03f61116a24d1f3e3f96957804fee9be85d5052379d3b48e866a6e7e30679a41987c160aa3c81b9b09f79e2
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -1655,6 +1693,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"attr-accept@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "attr-accept@npm:2.2.2"
+  checksum: f77c073ac9616a783f2df814a56f65f1c870193e8da6097139e30b3be84ecc19fb835b93e81315d1da4f19e80721f14e8c8075014205e00abd37b856fe030b80
+  languageName: node
+  linkType: hard
+
 "autoprefixer@npm:^10.0.1":
   version: 10.4.16
   resolution: "autoprefixer@npm:10.4.16"
@@ -1866,9 +1911,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001538, caniuse-lite@npm:^1.0.30001541":
-  version: 1.0.30001561
-  resolution: "caniuse-lite@npm:1.0.30001561"
-  checksum: 6e84c84026fee53edbdbb5aded7a04a036aae4c2e367cf6bdc90c6783a591e2fdcfcdebcc4e774aca61092e542a61200c8c16b06659396492426033c4dbcc618
+  version: 1.0.30001562
+  resolution: "caniuse-lite@npm:1.0.30001562"
+  checksum: 4d2d4174317b582699ed66e12034a21222c931b9fefc42d53a283666d1323c27bb2d135b9f5efd89c242222b591111a21b2c90166457019389191d54566eef68
   languageName: node
   linkType: hard
 
@@ -2231,9 +2276,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.535":
-  version: 1.4.582
-  resolution: "electron-to-chromium@npm:1.4.582"
-  checksum: 1943110a9e13cf55bbf8cd6c8151feb1105c42722df94b9a6b48d2130ae3c2210aff44c01bb242a78c45bfa4d56f6ea307813bdb41248bef7e95569dc194dda4
+  version: 1.4.583
+  resolution: "electron-to-chromium@npm:1.4.583"
+  checksum: 48545d5d281d55e9ae32491bcbac6d8be016de55553ad75ba6154daa2d3db619f76d3730a846e3737e581537e39b2f176edd864463d16cb6211f2defa1be9464
   languageName: node
   linkType: hard
 
@@ -2461,6 +2506,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-import-resolver-alias@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "eslint-import-resolver-alias@npm:1.1.2"
+  peerDependencies:
+    eslint-plugin-import: ">=1.4.0"
+  checksum: 71f156e131242db509fe1cfdb410cca665cc9c6e4201e20609689016414e3c6c0b9df27a74b83367694b8ccc5f41687abde26b6cd2c96f961ba16152aca40e43
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.6, eslint-import-resolver-node@npm:^0.3.9":
   version: 0.3.9
   resolution: "eslint-import-resolver-node@npm:0.3.9"
@@ -2616,11 +2670,11 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-react-hooks@npm:^4.5.0 || 5.0.0-canary-7118f5dd7-20230705":
-  version: 4.6.0
-  resolution: "eslint-plugin-react-hooks@npm:4.6.0"
+  version: 5.0.0-canary-7118f5dd7-20230705
+  resolution: "eslint-plugin-react-hooks@npm:5.0.0-canary-7118f5dd7-20230705"
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 58c7e10ea5792c33346fcf5cb4024e14837035ce412ff99c2dcb7c4f903dc9b17939078f80bfef826301ce326582c396c00e8e0ac9d10ac2cde2b42d33763c65
+  checksum: 554c4e426bfeb126155510dcba8345391426af147ee629f1c56c9ef6af08340d11008213e4e15b0138830af2c4439d7158da2091987f7efb01aeab662c44b274
   languageName: node
   linkType: hard
 
@@ -2879,6 +2933,15 @@ __metadata:
   dependencies:
     flat-cache: "npm:^3.0.4"
   checksum: 58473e8a82794d01b38e5e435f6feaf648e3f36fdb3a56e98f417f4efae71ad1c0d4ebd8a9a7c50c3ad085820a93fc7494ad721e0e4ebc1da3573f4e1c3c7cdd
+  languageName: node
+  linkType: hard
+
+"file-selector@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "file-selector@npm:0.6.0"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 477ca1b56274db9fee1a8a623c4bfef580389726a5fef843af8c1f2f17f70ec2d1e41b29115777c92e120a15f1cca734c6ef36bb48bfa2ee027c68da16cd0d28
   languageName: node
   linkType: hard
 
@@ -4265,6 +4328,7 @@ __metadata:
     "@typescript-eslint/type-utils": "npm:^6.11.0"
     "@typescript-eslint/types": "npm:^6.11.0"
     "@typescript-eslint/utils": "npm:^6.11.0"
+    "@uploadthing/react": "npm:^6.0.0"
     autoprefixer: "npm:^10.0.1"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.0.0"
@@ -4272,6 +4336,7 @@ __metadata:
     eslint-config-next: "npm:14.0.2"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-config-standard-with-typescript: "npm:^39.1.1"
+    eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-node: "npm:^0.3.9"
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.29.0"
@@ -4290,12 +4355,14 @@ __metadata:
     prisma: "npm:^5.5.2"
     react: "npm:^18"
     react-dom: "npm:^18"
+    react-dropzone: "npm:^14.2.3"
     react-hook-form: "npm:^7.48.2"
     tailwind-merge: "npm:^2.0.0"
     tailwindcss: "npm:^3.3.0"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:*"
     typescript-eslint: "npm:^0.0.1-alpha.0"
+    uploadthing: "npm:^6.0.1"
     zod: "npm:^3.22.4"
   languageName: unknown
   linkType: soft
@@ -4893,13 +4960,13 @@ __metadata:
   linkType: hard
 
 "prisma@npm:^5.5.2":
-  version: 5.5.2
-  resolution: "prisma@npm:5.5.2"
+  version: 5.6.0
+  resolution: "prisma@npm:5.6.0"
   dependencies:
-    "@prisma/engines": "npm:5.5.2"
+    "@prisma/engines": "npm:5.6.0"
   bin:
     prisma: build/index.js
-  checksum: 60a84b4f4877e45472e3dd375b7ada1e743effc1974470d0993c279afab1d612aba1f14c1144b1e4c1ad74a9dde2c5f7411ff395131619a2c70b017f32d65fac
+  checksum: 8d8069295cf7402f6eb103fa1d5c511c1006fc78057fa180e9b0688076703b33301ce6b04a30575d8b01f0bbe9a26b3c196d0bc4f9253eca9ee780e0800ce602
   languageName: node
   linkType: hard
 
@@ -4977,6 +5044,19 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 66dfc5f93e13d0674e78ef41f92ed21dfb80f9c4ac4ac25a4b51046d41d4d2186abc915b897f69d3d0ebbffe6184e7c5876f2af26bfa956f179225d921be713a
+  languageName: node
+  linkType: hard
+
+"react-dropzone@npm:^14.2.3":
+  version: 14.2.3
+  resolution: "react-dropzone@npm:14.2.3"
+  dependencies:
+    attr-accept: "npm:^2.2.2"
+    file-selector: "npm:^0.6.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    react: ">= 16.8 || 18.0.0"
+  checksum: 6433517c53309aca1bb4f4a535aeee297345ca1e11b123676f46c7682ffab34a3428cbda106448fc92b5c9a5e0fa5d225bc188adebcd4d302366bf6b1f9c3fc1
   languageName: node
   linkType: hard
 
@@ -5651,6 +5731,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tailwind-merge@npm:^1.13.2":
+  version: 1.14.0
+  resolution: "tailwind-merge@npm:1.14.0"
+  checksum: a66f5ab1a2bb2b0f5a40a031867a6bc900de98eb3339b2a51759351221527a3d600eecb6cb5a038830aa89548eba72bb63aa3856cb9f31c9a3918b42eb3df350
+  languageName: node
+  linkType: hard
+
 "tailwind-merge@npm:^2.0.0":
   version: 2.0.0
   resolution: "tailwind-merge@npm:2.0.0"
@@ -5990,6 +6077,16 @@ __metadata:
   bin:
     update-browserslist-db: cli.js
   checksum: e52b8b521c78ce1e0c775f356cd16a9c22c70d25f3e01180839c407a5dc787fb05a13f67560cbaf316770d26fa99f78f1acd711b1b54a4f35d4820d4ea7136e6
+  languageName: node
+  linkType: hard
+
+"uploadthing@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "uploadthing@npm:6.0.1"
+  dependencies:
+    "@uploadthing/mime-types": "npm:^0.2.2"
+    "@uploadthing/shared": "npm:^6.0.0"
+  checksum: ba4f50847d3b27ca177ce697839f6080ca999bb54bd97efac6558e5f95f4e959355bb1a49051b0563657827442983aacc51053aa38a3280c2b89436925bc93b7
   languageName: node
   linkType: hard
 

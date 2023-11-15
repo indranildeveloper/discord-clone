@@ -1,8 +1,11 @@
 import { FC } from "react";
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Poppins } from "next/font/google";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
 import { cn } from "@/lib/utils";
+import { ourFileRouter } from "./api/uploadthing/core";
+import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { RootLayoutProps } from "@/interface/layout/RootLayoutInterface";
 
@@ -23,6 +26,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={cn(poppins.className)}>
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"

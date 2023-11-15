@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, useState, useEffect } from "react";
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -22,16 +21,8 @@ import {
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-
-// TODO: Organize code
-const formSchema = z.object({
-  name: z.string().min(1, {
-    message: "Server name is required.",
-  }),
-  imageUrl: z.string().min(1, {
-    message: "Server image is required.",
-  }),
-});
+import FileUpload from "../shared/FileUpload";
+import { formSchema, formPayload } from "@/validators/formValidator";
 
 const InitialModal: FC = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -50,10 +41,7 @@ const InitialModal: FC = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-  // TODO organize code
-  const handleSubmit = async (
-    values: z.infer<typeof formSchema>,
-  ): Promise<void> => {
+  const handleSubmit = async (values: formPayload): Promise<void> => {
     console.log(values);
   };
 
@@ -78,7 +66,21 @@ const InitialModal: FC = () => {
             >
               <div className="space-y-8">
                 <div className="flex items-center justify-center text-center">
-                  TODO: Image Upload
+                  <FormField
+                    control={form.control}
+                    name="imageUrl"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <FileUpload
+                            endpoint="serverImage"
+                            value={field.value}
+                            onChange={field.onChange}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
                 </div>
 
                 <FormField
