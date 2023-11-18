@@ -1,6 +1,8 @@
 "use client";
 
 import { FC, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -26,6 +28,7 @@ import { formSchema, formPayload } from "@/validators/formValidator";
 
 const InitialModal: FC = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -42,7 +45,14 @@ const InitialModal: FC = () => {
   const isLoading = form.formState.isSubmitting;
 
   const handleSubmit = async (values: formPayload): Promise<void> => {
-    console.log(values);
+    try {
+      await axios.post("/api/servers", values);
+      form.reset();
+      router.refresh();
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
