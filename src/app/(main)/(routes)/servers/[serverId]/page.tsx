@@ -5,7 +5,7 @@ const ServerPage: FC = () => {
   return (
     <div>
       Server ID Page
-      <Button variant="primary">Click Me</Button>
+      <Button variant="default">Click Me</Button>
     </div>
   );
 };

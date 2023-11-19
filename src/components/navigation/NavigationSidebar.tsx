@@ -27,7 +27,7 @@ const NavigationSidebar: FC = async () => {
   });
 
   return (
-    <div className="flex h-full w-full flex-col items-center space-y-4 py-3 dark:bg-secondary">
+    <div className="flex h-full w-full flex-col items-center space-y-4 border-r py-3 dark:bg-background">
       <NavigationAction />
       <Separator className="mx-auto h-0.5 w-10 bg-zinc-300 dark:bg-zinc-700" />
       <ScrollArea className="w-full flex-1">

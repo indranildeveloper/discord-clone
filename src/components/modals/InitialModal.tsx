@@ -115,7 +115,7 @@ const InitialModal: FC = () => {
                 />
               </div>
               <DialogFooter>
-                <Button type="submit" variant="primary" disabled={isLoading}>
+                <Button type="submit" disabled={isLoading}>
                   Create
                 </Button>
               </DialogFooter>

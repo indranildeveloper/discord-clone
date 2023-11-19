@@ -8,6 +8,7 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { RootLayoutProps } from "@/interface/layout/RootLayoutInterface";
+import ModalProvider from "@/components/providers/ModalProvider";
 
 import "../styles/globals.css";
 
@@ -33,6 +34,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
             enableSystem={false}
             storageKey="next-discord-theme"
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
