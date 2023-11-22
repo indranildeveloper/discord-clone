@@ -1,8 +1,15 @@
-export type ModalType = "createServer";
+import { Server } from "@prisma/client";
+
+export type ModalType = "createServer" | "invite";
+
+export interface ModalData {
+  server?: Server;
+}
 
 export interface ModalStore {
   type: ModalType | null;
+  data: ModalData;
   isOpen: boolean;
-  onOpen: (type: ModalType) => void;
+  onOpen: (type: ModalType, data?: ModalData) => void;
   onClose: () => void;
 }

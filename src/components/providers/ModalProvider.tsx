@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import CreateServer from "../modals/CreateServer";
+import InviteModal from "../modals/InviteModal";
 
 const ModalProvider: FC = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -14,6 +15,7 @@ const ModalProvider: FC = () => {
     isMounted && (
       <>
         <CreateServer />
+        <InviteModal />
       </>
     )
   );
