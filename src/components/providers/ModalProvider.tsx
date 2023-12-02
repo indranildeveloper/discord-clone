@@ -1,9 +1,10 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import CreateServer from "../modals/CreateServer";
+import CreateServerModal from "../modals/CreateServerModal";
 import InviteModal from "../modals/InviteModal";
-import EditServer from "../modals/EditServer";
+import EditServerModal from "../modals/EditServerModal";
+import MembersModal from "../modals/MembersModal";
 
 const ModalProvider: FC = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -15,9 +16,10 @@ const ModalProvider: FC = () => {
   return (
     isMounted && (
       <>
-        <CreateServer />
+        <CreateServerModal />
         <InviteModal />
-        <EditServer />
+        <EditServerModal />
+        <MembersModal />
       </>
     )
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useForm } from "react-hook-form";
@@ -27,11 +27,12 @@ import FileUpload from "../shared/FileUpload";
 import { formSchema, formPayload } from "@/validators/formValidator";
 import { useModal } from "@/hooks/useModalStore";
 
-const CreateServer: FC = () => {
+const EditServerModal: FC = () => {
   const router = useRouter();
-  const { type, isOpen, onClose } = useModal();
+  const { type, isOpen, onClose, data } = useModal();
 
-  const isModalOpen = isOpen && type === "createServer";
+  const isModalOpen = isOpen && type === "editServer";
+  const { server } = data;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -41,11 +42,18 @@ const CreateServer: FC = () => {
     },
   });
 
+  useEffect(() => {
+    if (server) {
+      form.setValue("name", server.name);
+      form.setValue("imageUrl", server.imageUrl);
+    }
+  }, [server, form]);
+
   const isLoading = form.formState.isSubmitting;
 
   const handleSubmit = async (values: formPayload): Promise<void> => {
     try {
-      await axios.post("/api/servers", values);
+      await axios.patch(`/api/servers/${server?.id}`, values);
       form.reset();
       router.refresh();
       onClose();
@@ -119,7 +127,7 @@ const CreateServer: FC = () => {
             </div>
             <DialogFooter>
               <Button type="submit" disabled={isLoading}>
-                Create
+                Save
               </Button>
             </DialogFooter>
           </form>
@@ -129,4 +137,4 @@ const CreateServer: FC = () => {
   );
 };
 
-export default CreateServer;
+export default EditServerModal;

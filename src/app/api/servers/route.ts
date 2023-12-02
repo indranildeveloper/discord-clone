@@ -4,8 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { db } from "@/lib/db";
 import { currentProfile } from "@/lib/currentProfile";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse<unknown>> {
   try {
     const { name, imageUrl } = await req.json();
     const profile = await currentProfile();
