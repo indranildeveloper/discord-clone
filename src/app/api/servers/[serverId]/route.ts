@@ -20,7 +20,6 @@ export async function PATCH(
         id: params.serverId,
         profileId: profile.id,
       },
-
       data: {
         name,
         imageUrl,
@@ -30,6 +29,31 @@ export async function PATCH(
     return NextResponse.json(server, { status: 200 });
   } catch (error) {
     console.log("[SERVER_ID_PATCH]", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
+}
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: ServerParams,
+): Promise<NextResponse<unknown>> {
+  try {
+    const profile = await currentProfile();
+
+    if (!profile) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+
+    const server = await db.server.delete({
+      where: {
+        id: params.serverId,
+        profileId: profile.id,
+      },
+    });
+
+    return NextResponse.json(server, { status: 200 });
+  } catch (error) {
+    console.log("[SERVER_ID_DELETE]", error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
