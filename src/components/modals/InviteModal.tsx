@@ -61,7 +61,7 @@ const InviteModal: FC = () => {
             Share the link of the server to your friends!
           </DialogDescription>
         </DialogHeader>
-        <div className="">
+        <div>
           <Label className="text-xs font-bold uppercase text-zinc-500 dark:text-secondary">
             Server Invite Link
           </Label>
