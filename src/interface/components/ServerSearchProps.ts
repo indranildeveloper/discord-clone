@@ -13,3 +13,8 @@ export interface ServeSearchProps {
       | undefined;
   }>;
 }
+
+export interface handleClickParams {
+  id: string;
+  type: "channel" | "member";
+}

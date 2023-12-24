@@ -104,7 +104,7 @@ const ServerSidebar: FC<ServerSidebarProps> = async ({ serverId }) => {
                 })),
               },
               {
-                label: "Member",
+                label: "Members",
                 type: "member",
                 data: members?.map((member) => ({
                   id: member.id,
