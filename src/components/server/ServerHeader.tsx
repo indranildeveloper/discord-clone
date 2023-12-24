@@ -30,10 +30,9 @@ const ServerHeader: FC<ServerHeaderProps> = ({ server, role }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="focus:outline-none" asChild>
-        {/* TODO: Truncate the server name */}
-        <button className="text-md flex h-12 w-full items-center border-b border-neutral-200 px-3 font-semibold transition hover:bg-zinc-700/10 dark:border-neutral-800 dark:hover:bg-zinc-700/50">
+        <button className="text-md flex h-12 w-full items-center truncate border-b border-neutral-200 px-3 font-semibold transition hover:bg-zinc-700/10 dark:border-neutral-800 dark:hover:bg-zinc-700/50">
           {server.name}
-          <ChevronDown className="ml-auto h-5 w-5" />
+          <ChevronDown className="ml-auto hidden h-5 w-5 md:block" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 space-y-1 text-sm font-medium text-black dark:text-neutral-400">
