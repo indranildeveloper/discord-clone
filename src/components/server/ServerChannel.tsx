@@ -4,9 +4,10 @@ import { FC } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import ActionTooltip from "../shared/ActionTooltip";
+import { Edit, Hash, Lock, Mic, Trash, Video } from "lucide-react";
 import { ServerChannelProps } from "@/interface/components/ServerChannelProps";
 import { ChannelType, MemberRole } from "@prisma/client";
-import { Edit, Hash, Lock, Mic, Trash, Video } from "lucide-react";
+import { useModal } from "@/hooks/useModalStore";
 
 const iconMap = {
   [ChannelType.TEXT]: Hash,
@@ -18,6 +19,7 @@ const ServerChannel: FC<ServerChannelProps> = ({ server, channel, role }) => {
   const params = useParams();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const router = useRouter();
+  const { onOpen } = useModal();
 
   const Icon = iconMap[channel.type];
 
@@ -45,7 +47,10 @@ const ServerChannel: FC<ServerChannelProps> = ({ server, channel, role }) => {
             <Edit className="hidden h-4 w-4 text-zinc-500 transition hover:text-zinc-600 group-hover:block dark:text-zinc-400 dark:hover:text-zinc-300" />
           </ActionTooltip>
           <ActionTooltip label="Delete">
-            <Trash className="hidden h-4 w-4 text-zinc-500 transition hover:text-zinc-600 group-hover:block dark:text-zinc-400 dark:hover:text-zinc-300" />
+            <Trash
+              className="hidden h-4 w-4 text-zinc-500 transition hover:text-zinc-600 group-hover:block dark:text-zinc-400 dark:hover:text-zinc-300"
+              onClick={() => onOpen("deleteChannel", { server, channel })}
+            />
           </ActionTooltip>
         </div>
       )}

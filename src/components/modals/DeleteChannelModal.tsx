@@ -3,6 +3,7 @@
 import { FC, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import qs from "query-string";
 import {
   Dialog,
   DialogHeader,
@@ -14,21 +15,28 @@ import {
 import { Button } from "@/components/ui/Button";
 import { useModal } from "@/hooks/useModalStore";
 
-const DeleteServerModal: FC = () => {
+const DeleteChannelModal: FC = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { type, isOpen, onClose, data } = useModal();
-  const { server } = data;
+  const { server, channel } = data;
 
-  const isModalOpen = isOpen && type === "deleteServer";
+  const isModalOpen = isOpen && type === "deleteChannel";
 
   const handleSubmit = async (): Promise<void> => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/servers/${server?.id}`);
+      const url = qs.stringifyUrl({
+        url: `/api/channels/${channel?.id}`,
+        query: {
+          serverId: server?.id,
+        },
+      });
+
+      await axios.delete(url);
       onClose();
-      router.push("/");
+      router.push(`/servers/${server?.id}`);
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -42,12 +50,12 @@ const DeleteServerModal: FC = () => {
       <DialogContent className="overflow-hidden bg-white text-black">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl">
-            Delete Server
+            Delete Channel
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             Are you sure you want to do this <br />
             <span className="font-semibold text-primary">
-              {server?.name}
+              #{channel?.name}
             </span>{" "}
             will be permanently deleted.
           </DialogDescription>
@@ -67,4 +75,4 @@ const DeleteServerModal: FC = () => {
   );
 };
 
-export default DeleteServerModal;
+export default DeleteChannelModal;

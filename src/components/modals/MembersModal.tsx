@@ -66,8 +66,8 @@ const MembersModal: FC = () => {
 
       const response = await axios.delete(url);
 
-      router.refresh();
       onOpen("members", { server: response.data });
+      router.refresh();
     } catch (error) {
       console.log(error);
     } finally {
