@@ -9,6 +9,7 @@ import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { RootLayoutProps } from "@/interface/layout/RootLayoutInterface";
 import ModalProvider from "@/components/providers/ModalProvider";
+import SocketProvider from "@/components/providers/SocketProvider";
 
 import "../styles/globals.css";
 
@@ -34,8 +35,10 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
             enableSystem={false}
             storageKey="next-discord-theme"
           >
-            <ModalProvider />
-            {children}
+            <SocketProvider>
+              <ModalProvider />
+              {children}
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
