@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import qs from "query-string";
 import { useForm } from "react-hook-form";
@@ -12,10 +13,12 @@ import {
   ChatInputPayload,
   ChatInputSchema,
 } from "@/validators/chatInputValidator";
-import { Plus, Smile } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useModal } from "@/hooks/useModalStore";
+import EmojiPicker from "../shared/EmojiPicker";
 
 const ChatInput: FC<ChatInputProps> = ({ apiUrl, query, name, type }) => {
+  const router = useRouter();
   const { onOpen } = useModal();
 
   const form = useForm<ChatInputPayload>({
@@ -34,6 +37,8 @@ const ChatInput: FC<ChatInputProps> = ({ apiUrl, query, name, type }) => {
         query,
       });
       await axios.post(url, values);
+      form.reset();
+      router.refresh();
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +70,11 @@ const ChatInput: FC<ChatInputProps> = ({ apiUrl, query, name, type }) => {
                     {...field}
                   />
                   <div className="absolute right-8 top-7">
-                    <Smile />
+                    <EmojiPicker
+                      onChange={(emoji: string) =>
+                        field.onChange(`${field.value} ${emoji}`)
+                      }
+                    />
                   </div>
                 </div>
               </FormControl>
