@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { RootLayoutProps } from "@/interface/layout/RootLayoutInterface";
 import ModalProvider from "@/components/providers/ModalProvider";
 import SocketProvider from "@/components/providers/SocketProvider";
+import QueryProvider from "@/components/providers/QueryProvider";
 
 import "../styles/globals.css";
 
@@ -36,8 +37,10 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
             storageKey="next-discord-theme"
           >
             <SocketProvider>
-              <ModalProvider />
-              {children}
+              <QueryProvider>
+                <ModalProvider />
+                {children}
+              </QueryProvider>
             </SocketProvider>
           </ThemeProvider>
         </body>

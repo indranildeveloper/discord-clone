@@ -1,4 +1,4 @@
-export interface serverIdPageProps {
+export interface ServerIdPageProps {
   params: {
     serverId: string;
   };

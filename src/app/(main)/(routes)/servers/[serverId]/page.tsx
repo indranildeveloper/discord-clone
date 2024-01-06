@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { serverIdPageProps } from "@/interface/pages/ServerIdPageProps";
+import { ServerIdPageProps } from "@/interface/pages/ServerIdPageProps";
 import { currentProfile } from "@/lib/currentProfile";
 import { redirectToSignIn } from "@clerk/nextjs";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
-const ServerPage: FC<serverIdPageProps> = async ({ params }) => {
+const ServerPage: FC<ServerIdPageProps> = async ({ params }) => {
   const profile = await currentProfile();
 
   if (!profile) {
