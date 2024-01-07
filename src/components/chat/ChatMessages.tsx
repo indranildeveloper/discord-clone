@@ -1,11 +1,15 @@
 "use client";
 
 import { FC, Fragment } from "react";
+import { format } from "date-fns";
 import { Loader2, ServerCrash } from "lucide-react";
-import { ChatMessagesProps } from "@/interface/components/ChatMessagesProps";
 import ChatWelcome from "./ChatWelcome";
+import ChatItem from "./ChatItem";
 import { useChatQuery } from "@/hooks/useChatQuery";
 import { MessageWithMemberWithProfile } from "@/types/server";
+import { ChatMessagesProps } from "@/interface/components/ChatMessagesProps";
+
+const DATE_FORMAT = "d MMM yyyy, HH:mm";
 
 const ChatMessages: FC<ChatMessagesProps> = ({
   name,
@@ -60,7 +64,19 @@ const ChatMessages: FC<ChatMessagesProps> = ({
         {data?.pages?.map((group, idx) => (
           <Fragment key={idx}>
             {group.items.map((message: MessageWithMemberWithProfile) => (
-              <div key={message.id}>{message.content}</div>
+              <ChatItem
+                key={message.id}
+                id={message.id}
+                currentMember={member}
+                member={message.member}
+                content={message.content}
+                fileUrl={message.fileUrl}
+                deleted={message.deleted}
+                timeStamp={format(new Date(message.createdAt), DATE_FORMAT)}
+                isUpdated={message.updatedAt !== message.createdAt}
+                socketUrl={socketUrl}
+                socketQuery={socketQuery}
+              />
             ))}
           </Fragment>
         ))}
