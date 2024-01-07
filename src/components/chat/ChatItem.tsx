@@ -8,6 +8,7 @@ import qs from "query-string";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MemberRole } from "@prisma/client";
+import { useModal } from "@/hooks/useModalStore";
 import UserAvatar from "../shared/UserAvatar";
 import ActionTooltip from "../shared/ActionTooltip";
 import { Form, FormControl, FormField, FormItem } from "../ui/Form";
@@ -40,7 +41,7 @@ const ChatItem: FC<ChatItemProps> = ({
   socketQuery,
 }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  // const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const { onOpen } = useModal();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -211,7 +212,15 @@ const ChatItem: FC<ChatItemProps> = ({
           )}
 
           <ActionTooltip label="Delete">
-            <Trash className="ml-auto h-4 w-4 cursor-pointer text-zinc-400 transition hover:text-zinc-600 dark:hover:text-zinc-300" />
+            <Trash
+              className="ml-auto h-4 w-4 cursor-pointer text-zinc-400 transition hover:text-zinc-600 dark:hover:text-zinc-300"
+              onClick={() =>
+                onOpen("deleteMessage", {
+                  apiUrl: `${socketUrl}/${id}`,
+                  query: socketQuery,
+                })
+              }
+            />
           </ActionTooltip>
         </div>
       )}
