@@ -8,6 +8,7 @@ import ChatItem from "./ChatItem";
 import { useChatQuery } from "@/hooks/useChatQuery";
 import { MessageWithMemberWithProfile } from "@/types/server";
 import { ChatMessagesProps } from "@/interface/components/ChatMessagesProps";
+import { useChatSocket } from "@/hooks/useChatSocket";
 
 const DATE_FORMAT = "d MMM yyyy, HH:mm";
 
@@ -23,6 +24,8 @@ const ChatMessages: FC<ChatMessagesProps> = ({
   type,
 }) => {
   const queryKey = `chat:${chatId}`;
+  const addKey = `chat:${chatId}:messages`;
+  const updateKey = `chat:${chatId}:messages:update`;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
@@ -32,6 +35,8 @@ const ChatMessages: FC<ChatMessagesProps> = ({
       paramKey,
       paramValue,
     });
+
+  useChatSocket({ queryKey, addKey, updateKey });
 
   if (status === "pending") {
     return (

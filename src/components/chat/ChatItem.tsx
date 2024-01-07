@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import { z } from "zod";
+import { useRouter, useParams } from "next/navigation";
 import axios from "axios";
 import qs from "query-string";
 import { useForm } from "react-hook-form";
@@ -17,16 +17,16 @@ import { Button } from "../ui/Button";
 import { ChatItemProps } from "@/interface/components/ChatItemProps";
 import { Edit, File, ShieldAlert, ShieldCheck, Trash } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  ChatInputPayload,
+  ChatInputSchema,
+} from "@/validators/chatInputValidator";
 
 const roleIconMap = {
   GUEST: null,
   MODERATOR: <ShieldCheck className="ml-2 h-4 w-4 text-primary" />,
   ADMIN: <ShieldAlert className="ml-2 h-4 w-4 text-rose-500" />,
 };
-
-const formSchema = z.object({
-  content: z.string().min(1),
-});
 
 const ChatItem: FC<ChatItemProps> = ({
   id,
@@ -41,10 +41,13 @@ const ChatItem: FC<ChatItemProps> = ({
   socketQuery,
 }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
+  const router = useRouter();
+  const params = useParams();
+
   const { onOpen } = useModal();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ChatInputPayload>({
+    resolver: zodResolver(ChatInputSchema),
     defaultValues: {
       content,
     },
@@ -80,9 +83,7 @@ const ChatItem: FC<ChatItemProps> = ({
 
   const isLoading = form.formState.isSubmitting;
 
-  const handleSubmit = async (
-    values: z.infer<typeof formSchema>,
-  ): Promise<void> => {
+  const handleSubmit = async (values: ChatInputPayload): Promise<void> => {
     try {
       const url = qs.stringifyUrl({
         url: `${socketUrl}/${id}`,
@@ -96,16 +97,32 @@ const ChatItem: FC<ChatItemProps> = ({
     }
   };
 
+  const handleMemberClick = (): void => {
+    if (member.id === currentMember.id) {
+      return;
+    }
+
+    router.push(
+      `/servers/${params?.serverId.toString()}/conversations/${member.id}`,
+    );
+  };
+
   return (
     <div className="group relative flex w-full items-center p-4 transition hover:bg-background/10">
       <div className="group flex w-full items-start gap-x-2">
-        <div className="cursor-pointer transition hover:drop-shadow-md">
+        <div
+          className="cursor-pointer transition hover:drop-shadow-md"
+          onClick={handleMemberClick}
+        >
           <UserAvatar src={member.profile.imageUrl} />
         </div>
         <div className="flex w-full flex-col">
           <div className="flex items-center gap-x-2">
             <div className="flex items-center">
-              <p className="cursor-pointer text-sm font-semibold hover:underline">
+              <p
+                className="cursor-pointer text-sm font-semibold hover:underline"
+                onClick={handleMemberClick}
+              >
                 {member.profile.name}
               </p>
               <ActionTooltip label={member.role}>
