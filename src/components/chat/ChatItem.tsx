@@ -69,6 +69,7 @@ const ChatItem: FC<ChatItemProps> = ({
     form.reset({
       content,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content]);
 
   const fileType = fileUrl?.split(".").pop();

@@ -1,17 +1,6 @@
 /** @type {import('next').NextConfig} */
-const path = require("path");
 
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve.alias["@"] = path.join(__dirname, "src");
-    return config;
-  },
-  output: "standalone",
-  reactStrictMode: true,
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
-    esmExternals: false,
-  },
   images: {
     remotePatterns: [
       {

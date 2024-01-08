@@ -5206,6 +5206,7 @@ __metadata:
     cmdk: "npm:^0.2.0"
     date-fns: "npm:^3.1.0"
     emoji-mart: "npm:^5.5.2"
+    encoding: "npm:^0.1.13"
     eslint: "npm:^8.56.0"
     eslint-config-next: "npm:^14.0.4"
     eslint-config-prettier: "npm:^9.1.0"
