@@ -2,9 +2,12 @@
 const path = require("path");
 
 const nextConfig = {
-  output: "standalone",
-  webpack: (config, { isServer }) => {
-    config.resolve.alias["~"] = path.join(__dirname, "src");
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.resolve(__dirname, "./"),
+    };
+
     return config;
   },
   images: {
