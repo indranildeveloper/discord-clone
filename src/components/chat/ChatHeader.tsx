@@ -4,6 +4,7 @@ import { ChatHeaderProps } from "@/interface/components/ChatHeaderProps";
 import MobileToggle from "../shared/MobileToggle";
 import UserAvatar from "../shared/UserAvatar";
 import SocketIndicator from "../shared/SocketIndicator";
+import ChatVideoButton from "./ChatVideoButton";
 
 const ChatHeader: FC<ChatHeaderProps> = ({
   serverId,
@@ -22,6 +23,7 @@ const ChatHeader: FC<ChatHeaderProps> = ({
       )}
       <p className="text-md font-semibold text-black dark:text-white">{name}</p>
       <div className="ml-auto flex items-center">
+        {type === "conversation" && <ChatVideoButton />}
         <SocketIndicator />
       </div>
     </div>
