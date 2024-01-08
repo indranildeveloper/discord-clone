@@ -3,14 +3,7 @@ const path = require("path");
 
 const nextConfig = {
   webpack: (config) => {
-    config.externals.push({
-      "utf-8-validate": "commonjs utf-8-validate",
-      bufferutil: "commonjs bufferutil",
-    });
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@": path.resolve(__dirname, "./"),
-    };
+    config.resolve.alias["@"] = path.join(__dirname, "src");
     return config;
   },
   output: "standalone",
