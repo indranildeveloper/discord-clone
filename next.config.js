@@ -10,6 +10,12 @@ const nextConfig = {
 
     return config;
   },
+  output: "standalone",
+  reactStrictMode: true,
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, "../../"),
+    esmExternals: false,
+  },
   images: {
     remotePatterns: [
       {
