@@ -11,7 +11,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/Dialog";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import { useModal } from "@/hooks/useModalStore";
 
 const LeaveServerModal: FC = () => {

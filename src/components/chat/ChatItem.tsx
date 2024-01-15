@@ -13,7 +13,7 @@ import UserAvatar from "../shared/UserAvatar";
 import ActionTooltip from "../shared/ActionTooltip";
 import { Form, FormControl, FormField, FormItem } from "../ui/Form";
 import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
+
 import { ChatItemProps } from "@/interface/components/ChatItemProps";
 import { Edit, File, ShieldAlert, ShieldCheck, Trash } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,7 @@ import {
   ChatInputPayload,
   ChatInputSchema,
 } from "@/validators/chatInputValidator";
+import { Button } from "../ui/Button";
 
 const roleIconMap = {
   GUEST: null,

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/Dialog";
 import { Label } from "@/components/ui/Label";
 import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import { useModal } from "@/hooks/useModalStore";
 import { useOrigin } from "@/hooks/useOrigin";
 import { Check, Copy, RefreshCw } from "lucide-react";

@@ -30,7 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/Select";
 import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import { formSchema, formPayload } from "@/validators/createChannelValidator";
 import { useModal } from "@/hooks/useModalStore";
 import { ChannelType } from "@prisma/client";

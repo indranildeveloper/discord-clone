@@ -22,7 +22,7 @@ import {
   FormMessage,
 } from "@/components/ui/Form";
 import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import FileUpload from "../shared/FileUpload";
 import { formSchema, formPayload } from "@/validators/formValidator";
 

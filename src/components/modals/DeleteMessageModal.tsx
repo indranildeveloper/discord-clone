@@ -11,8 +11,9 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/Dialog";
-import { Button } from "@/components/ui/Button";
+
 import { useModal } from "@/hooks/useModalStore";
+import { Button } from "../ui/Button";
 
 const DeleteMessageModal: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);

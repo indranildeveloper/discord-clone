@@ -15,7 +15,7 @@ import {
   DialogFooter,
 } from "@/components/ui/Dialog";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/Form";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import FileUpload from "../shared/FileUpload";
 import {
   MessageFileSchema,
