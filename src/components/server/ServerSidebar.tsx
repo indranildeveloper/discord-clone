@@ -70,8 +70,9 @@ const ServerSidebar: FC<ServerSidebarProps> = async ({ serverId }) => {
     return redirect("/");
   }
 
-  const role = server.members.find((member) => member.profileId === profile.id)
-    ?.role;
+  const role = server.members.find(
+    (member) => member.profileId === profile.id,
+  )?.role;
 
   return (
     <div className="flex h-full w-full flex-col bg-gray-100 dark:bg-slate-900">

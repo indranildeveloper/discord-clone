@@ -82,7 +82,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clerk/nextjs@npm:^4.29.2":
+"@clerk/nextjs@npm:^4.29.3":
   version: 4.29.3
   resolution: "@clerk/nextjs@npm:4.29.3"
   dependencies:
@@ -328,7 +328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/components-react@npm:^1.5.1":
+"@livekit/components-react@npm:^1.5.2":
   version: 1.5.2
   resolution: "@livekit/components-react@npm:1.5.2"
   dependencies:
@@ -527,7 +527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^5.8.0":
+"@prisma/client@npm:^5.8.1":
   version: 5.8.1
   resolution: "@prisma/client@npm:5.8.1"
   peerDependencies:
@@ -1654,7 +1654,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.17.9":
+"@tanstack/react-query@npm:^5.17.12":
   version: 5.17.12
   resolution: "@tanstack/react-query@npm:5.17.12"
   dependencies:
@@ -1800,7 +1800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=13.7.0, @types/node@npm:^20.10.8":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=13.7.0, @types/node@npm:^20.11.2":
   version: 20.11.2
   resolution: "@types/node@npm:20.11.2"
   dependencies:
@@ -1846,7 +1846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.2.47":
+"@types/react@npm:*, @types/react@npm:^18.2.48":
   version: 18.2.48
   resolution: "@types/react@npm:18.2.48"
   dependencies:
@@ -1899,7 +1899,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^6.18.1":
+"@typescript-eslint/eslint-plugin@npm:^6.19.0":
   version: 6.19.0
   resolution: "@typescript-eslint/eslint-plugin@npm:6.19.0"
   dependencies:
@@ -1924,7 +1924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.4.2 || ^6.0.0, @typescript-eslint/parser@npm:^6.18.1, @typescript-eslint/parser@npm:^6.4.0":
+"@typescript-eslint/parser@npm:^5.4.2 || ^6.0.0, @typescript-eslint/parser@npm:^6.19.0, @typescript-eslint/parser@npm:^6.4.0":
   version: 6.19.0
   resolution: "@typescript-eslint/parser@npm:6.19.0"
   dependencies:
@@ -1952,7 +1952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:6.19.0, @typescript-eslint/type-utils@npm:^6.18.1":
+"@typescript-eslint/type-utils@npm:6.19.0, @typescript-eslint/type-utils@npm:^6.19.0":
   version: 6.19.0
   resolution: "@typescript-eslint/type-utils@npm:6.19.0"
   dependencies:
@@ -1969,7 +1969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:6.19.0, @typescript-eslint/types@npm:^6.18.1":
+"@typescript-eslint/types@npm:6.19.0, @typescript-eslint/types@npm:^6.19.0":
   version: 6.19.0
   resolution: "@typescript-eslint/types@npm:6.19.0"
   checksum: 6f81860a3c14df55232c2e6dec21fb166867b9f30b3c3369b325aef5ee1c7e41e827c0504654daa49c8ff1a3a9ca9d9bfe76786882b6212a7c1b58991a9c80b9
@@ -1995,7 +1995,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:6.19.0, @typescript-eslint/utils@npm:^6.18.1":
+"@typescript-eslint/utils@npm:6.19.0, @typescript-eslint/utils@npm:^6.19.0":
   version: 6.19.0
   resolution: "@typescript-eslint/utils@npm:6.19.0"
   dependencies:
@@ -3425,7 +3425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.1.2":
+"eslint-plugin-prettier@npm:^5.1.3":
   version: 5.1.3
   resolution: "eslint-plugin-prettier@npm:5.1.3"
   dependencies:
@@ -4755,7 +4755,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:^1.15.6":
+"livekit-client@npm:^1.15.8":
   version: 1.15.8
   resolution: "livekit-client@npm:1.15.8"
   dependencies:
@@ -4912,12 +4912,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.308.0":
-  version: 0.308.0
-  resolution: "lucide-react@npm:0.308.0"
+"lucide-react@npm:^0.309.0":
+  version: 0.309.0
+  resolution: "lucide-react@npm:0.309.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: cca0ed226974f51f2322f0797c9675ddb786b327974e9917694113ae6e7b24b5d02165218c0374d8ef1c18bf671402b577ac520f9246e18ed0464507bef64f5e
+  checksum: 3253675fa2225f742c3f66423445551fa4b973108951fd161d41c494ff60d388cc2d36ed3f76c4677a988bf9f1e127ce40d4a957f38bf355300906f29e67523b
   languageName: node
   linkType: hard
 
@@ -5171,13 +5171,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "next-discord@workspace:."
   dependencies:
-    "@clerk/nextjs": "npm:^4.29.2"
+    "@clerk/nextjs": "npm:^4.29.3"
     "@emoji-mart/data": "npm:^1.1.2"
     "@emoji-mart/react": "npm:^1.1.1"
     "@hookform/resolvers": "npm:^3.3.4"
-    "@livekit/components-react": "npm:^1.5.1"
+    "@livekit/components-react": "npm:^1.5.2"
     "@livekit/components-styles": "npm:^1.0.8"
-    "@prisma/client": "npm:^5.8.0"
+    "@prisma/client": "npm:^5.8.1"
     "@radix-ui/react-avatar": "npm:^1.0.4"
     "@radix-ui/react-dialog": "npm:^1.0.5"
     "@radix-ui/react-dropdown-menu": "npm:^2.0.6"
@@ -5188,16 +5188,16 @@ __metadata:
     "@radix-ui/react-separator": "npm:^1.0.3"
     "@radix-ui/react-slot": "npm:^1.0.2"
     "@radix-ui/react-tooltip": "npm:^1.0.7"
-    "@tanstack/react-query": "npm:^5.17.9"
-    "@types/node": "npm:^20.10.8"
-    "@types/react": "npm:^18.2.47"
+    "@tanstack/react-query": "npm:^5.17.12"
+    "@types/node": "npm:^20.11.2"
+    "@types/react": "npm:^18.2.48"
     "@types/react-dom": "npm:^18.2.18"
     "@types/uuid": "npm:^9.0.7"
-    "@typescript-eslint/eslint-plugin": "npm:^6.18.1"
-    "@typescript-eslint/parser": "npm:^6.18.1"
-    "@typescript-eslint/type-utils": "npm:^6.18.1"
-    "@typescript-eslint/types": "npm:^6.18.1"
-    "@typescript-eslint/utils": "npm:^6.18.1"
+    "@typescript-eslint/eslint-plugin": "npm:^6.19.0"
+    "@typescript-eslint/parser": "npm:^6.19.0"
+    "@typescript-eslint/type-utils": "npm:^6.19.0"
+    "@typescript-eslint/types": "npm:^6.19.0"
+    "@typescript-eslint/utils": "npm:^6.19.0"
     "@uploadthing/react": "npm:^6.1.0"
     autoprefixer: "npm:^10.4.16"
     axios: "npm:^1.6.5"
@@ -5216,27 +5216,27 @@ __metadata:
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-n: "npm:^16.6.2"
-    eslint-plugin-prettier: "npm:^5.1.2"
+    eslint-plugin-prettier: "npm:^5.1.3"
     eslint-plugin-promise: "npm:^6.1.1"
     eslint-plugin-react: "npm:^7.33.2"
     husky: "npm:^8.0.3"
     lint-staged: "npm:^15.2.0"
-    livekit-client: "npm:^1.15.6"
+    livekit-client: "npm:^1.15.8"
     livekit-server-sdk: "npm:^1.2.7"
-    lucide-react: "npm:^0.308.0"
+    lucide-react: "npm:^0.309.0"
     next: "npm:^14.0.4"
     next-themes: "npm:^0.2.1"
     postcss: "npm:^8.4.33"
-    prettier: "npm:^3.1.1"
+    prettier: "npm:^3.2.2"
     prettier-plugin-tailwindcss: "npm:^0.5.11"
-    prisma: "npm:^5.8.0"
+    prisma: "npm:^5.8.1"
     query-string: "npm:^8.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-dropzone: "npm:^14.2.3"
     react-hook-form: "npm:^7.49.3"
-    socket.io: "npm:^4.7.3"
-    socket.io-client: "npm:^4.7.3"
+    socket.io: "npm:^4.7.4"
+    socket.io-client: "npm:^4.7.4"
     tailwind-merge: "npm:^2.2.0"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
@@ -5822,7 +5822,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.1":
+"prettier@npm:^3.2.2":
   version: 3.2.2
   resolution: "prettier@npm:3.2.2"
   bin:
@@ -5831,7 +5831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:^5.8.0":
+"prisma@npm:^5.8.1":
   version: 5.8.1
   resolution: "prisma@npm:5.8.1"
   dependencies:
@@ -6470,7 +6470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socket.io-client@npm:^4.7.3":
+"socket.io-client@npm:^4.7.4":
   version: 4.7.4
   resolution: "socket.io-client@npm:4.7.4"
   dependencies:
@@ -6492,7 +6492,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socket.io@npm:^4.7.3":
+"socket.io@npm:^4.7.4":
   version: 4.7.4
   resolution: "socket.io@npm:4.7.4"
   dependencies:
